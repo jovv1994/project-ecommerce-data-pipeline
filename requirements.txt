@@ -2,6 +2,7 @@ Jupyter==1.0.0
 black==22.12.0
 db-sqlite3==0.0.1
 matplotlib==3.6.2
+numpy==1.23.5
 pandas==1.5.2
 plotly_express==0.4.1
 requests==2.26.0

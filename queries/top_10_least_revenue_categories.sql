@@ -8,7 +8,7 @@
 -- delivery date should be not null.
 SELECT 
 	pcnt.product_category_name_english AS Category,
-	COUNT(oo.order_id) AS Num_order,
+	COUNT(DISTINCT oo.order_id) AS Num_order,
 	SUM(oop.payment_value) AS Revenue
 FROM olist_products op
 INNER JOIN product_category_name_translation pcnt

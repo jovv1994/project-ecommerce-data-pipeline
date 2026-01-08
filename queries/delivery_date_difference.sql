@@ -8,7 +8,7 @@
 -- 2. You can use the CAST function to convert a number to an integer.
 -- 3. You can use the STRFTIME function to convert a order_delivered_customer_date to a string removing hours, minutes and seconds.
 -- 4. order_status == 'delivered' AND order_delivered_customer_date IS NOT NULL
-SELECT oc.customer_state, 
+SELECT oc.customer_state AS State, 
 CAST(AVG(JULIANDAY(oo.order_estimated_delivery_date) - JULIANDAY(STRFTIME('%F', oo.order_delivered_customer_date))) AS INTEGER) AS Delivery_Difference
 FROM olist_customers oc 
 INNER JOIN olist_orders oo 

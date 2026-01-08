@@ -36,25 +36,25 @@ AVG(
     END
 ) AS Year2016_real_time,
 AVG(
-    CASE WHEN STRFTIME('%Y', oo.order_purchase_timestamp) = '2016'
-    THEN JULIANDAY(order_estimated_delivery_date) - JULIANDAY(order_purchase_timestamp)
-    END
-) AS Year2016_estimated_time,
-AVG(
 	CASE WHEN STRFTIME('%Y', oo.order_purchase_timestamp) = '2017'
     THEN JULIANDAY(order_delivered_customer_date) - JULIANDAY(order_purchase_timestamp)
     END
 ) AS Year2017_real_time,
 AVG(
-    CASE WHEN STRFTIME('%Y', oo.order_purchase_timestamp) = '2017'
-    THEN JULIANDAY(order_estimated_delivery_date) - JULIANDAY(order_purchase_timestamp)
-    END
-) AS Year2017_estimated_time,
-AVG(
 	CASE WHEN STRFTIME('%Y', oo.order_purchase_timestamp) = '2018'
     THEN JULIANDAY(order_delivered_customer_date) - JULIANDAY(order_purchase_timestamp)
     END
 ) AS Year2018_real_time,
+AVG(
+    CASE WHEN STRFTIME('%Y', oo.order_purchase_timestamp) = '2016'
+    THEN JULIANDAY(order_estimated_delivery_date) - JULIANDAY(order_purchase_timestamp)
+    END
+) AS Year2016_estimated_time,
+AVG(
+    CASE WHEN STRFTIME('%Y', oo.order_purchase_timestamp) = '2017'
+    THEN JULIANDAY(order_estimated_delivery_date) - JULIANDAY(order_purchase_timestamp)
+    END
+) AS Year2017_estimated_time,
 AVG(
     CASE WHEN STRFTIME('%Y', oo.order_purchase_timestamp) = '2018'
     THEN JULIANDAY(order_estimated_delivery_date) - JULIANDAY(order_purchase_timestamp)

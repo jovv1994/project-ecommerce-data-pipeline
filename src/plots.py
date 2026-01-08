@@ -204,4 +204,13 @@ def plot_order_amount_per_day_with_holidays(df: DataFrame):
     # TODO: plot order amount per day with holidays using matplotlib.
     # Mark holidays with vertical lines.
     # Hint: use plt.axvline.
-    raise NotImplementedError
+    plt.figure(figsize=(12, 6))
+
+    plt.plot(df["date"], df["order_count"], color="green", alpha=0.7)
+
+    holidays = df[df["holiday"] == 1]["date"]
+
+    for holiday in holidays:
+        plt.axvline(x=holiday, color="blue", linestyle="dotted", alpha=0.4)
+
+    plt.show()

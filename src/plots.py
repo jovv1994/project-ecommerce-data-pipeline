@@ -181,7 +181,11 @@ def plot_freight_value_weight_relationship(df: DataFrame):
     """
     # TODO: plot freight value weight relationship using seaborn scatterplot.
     # Your x-axis should be weight and, y-axis freight value.
-    raise NotImplementedError
+    plt.figure(figsize=(6, 6))
+    
+    sns.scatterplot(data=df, x="product_weight_g", y="freight_value")
+
+    plt.show()
 
 
 def plot_delivery_date_difference(df: DataFrame):
